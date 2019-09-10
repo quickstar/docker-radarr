@@ -14,7 +14,7 @@ if [[ "${VERSION}" != "image" ]]; then
                 url="https://radarr.aeonlucid.com/v1/download/nightly/linux"
                 ;;
             unstable-appveyor)
-                jobid=$(curl -fsSL "https://ci.appveyor.com/api/projects/galli-leo/radarr-usby1/branch/develop" | jq -r '.build.jobs[0].jobId')
+                jobid=$(curl -fsSL "https://ci.appveyor.com/api/projects/quickstar/radarr/branch/add-hdareaorg-indexer" | jq -r '.build.jobs[0].jobId')
                 filename=$(curl -fsSL "https://ci.appveyor.com/api/buildjobs/${jobid}/artifacts" | jq -r '.[].fileName' | grep -o ".*Radarr.*.linux.tar.gz")
                 url="https://ci.appveyor.com/api/buildjobs/${jobid}/artifacts/${filename}"
                 ;;
